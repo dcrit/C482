@@ -140,7 +140,7 @@ public class ModifyParts implements Initializable {
                     Optional<ButtonType> result = alert.showAndWait();
                     if (result.isPresent() && result.get() == ButtonType.OK) {
                         Inventory.updatePart(id, inHouse);
-                        inHouse = new InHouse(id, partName, partStock, partCost, partMax, partMin, machineID);
+                        inHouse = new InHouse(0, null, 0, 0.00, 0, 0, 0);
                         Stage stage;
                         FXMLLoader loader = new FXMLLoader();
                         loader.setLocation(getClass().getResource("/View/MainForm.fxml"));
@@ -176,7 +176,7 @@ public class ModifyParts implements Initializable {
                     Optional<ButtonType> result = alert.showAndWait();
                     if (result.isPresent() && result.get() == ButtonType.OK) {
                         Inventory.updatePart(id, outsourced);
-                        outsourced = new Outsourced(id, partName, partStock, partCost, partMax, partMin, companyName);
+                        outsourced = new Outsourced(0, null, 0, 0.00, 0, 0, null);
                         System.out.println("Company Name: " + companyName);
                         Parent root = FXMLLoader.load(getClass().getResource("/View/MainForm.fxml"));
                         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
