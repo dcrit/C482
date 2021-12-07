@@ -189,6 +189,7 @@ public class ModifyProducts implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
                     Inventory.updateProduct(id, addProduct);
+                    addProduct = new Products();
                     for(Parts addToList: modifyAssociatedProductList) addProduct.addAssociatedPart(addToList);
                     addProduct = new Products(id, productName, productStock, productCost, productMax, productMin);
                     Stage stage;
