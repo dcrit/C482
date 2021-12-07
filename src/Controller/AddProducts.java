@@ -131,6 +131,7 @@ public class AddProducts implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
                     Inventory.addProducts(addProduct);
+                    addProduct = new Product();
 
                     //Adds associated parts to product
                     for (Parts addToList : associatedProductList) addProduct.addAssociatedPart(addToList);
@@ -155,6 +156,7 @@ public class AddProducts implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Please Enter A Valid Input ");
             alert.showAndWait();
+            productAutoGenId = Inventory.resetProductAutoGenID();
             System.out.println(e.getLocalizedMessage());
         }
     }
