@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public abstract class Parts {
     /**
-     * Boolean methods that checks if the user has entered a part name or company and no negative numbers.
+     * Variables 
      */
     private int partID, partStock, partsMin, partsMax;
     private String partName;
